@@ -1,0 +1,11 @@
+/*cau 1*/
+select city, count(*) from customers group by city;
+/*cau 2*/
+select count(*) from orders where month(orderDate) = 03 and year(orderDate) = 2005;
+select month(orderDate), count(*) from orders where year(orderDate) = 2005 group by month(orderDate);
+/*cau 3*/
+select orderNumber, (quantityOrdered * priceEach) valuablePrice from orderdetails order by valuablePrice desc limit 10;
+/*cau 4*/
+select productLine, sum(quantityInStock) totalQuantity from products group by productLine;
+/*cau 5*/
+select customerNumber, sum(amount) totalAmount from payments group by customerNumber;
